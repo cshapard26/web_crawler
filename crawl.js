@@ -3,7 +3,5 @@ function normalizeURL(url) {
     return normalizedUrl;
 }
 
-module.exports = {
-    normalizeURL
-  }
+module.exports = normalizeURL;
   
