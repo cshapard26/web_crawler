@@ -1,5 +1,5 @@
-const url = require('node:url');
-const JSDOM = require('jsdom');
+const {URL} = require('node:url');
+const {JSDOM} = require("jsdom");
 
 
 function normalizeURL(url) {
@@ -8,8 +8,22 @@ function normalizeURL(url) {
     return normalizedUrl.href;
 }
 
-function getURLsFromHTML(html){
-    return '';
+function getURLsFromHTML(html, baseUrl){
+    const dom = new JSDOM(html);
+
+    const aTagList = dom.window.document.querySelectorAll("a");
+    const urlList = [];
+
+    for (let i = 0; i < aTagList.length; i++) {
+        if (!aTagList[i].href.startsWith('/')) {
+            urlList[i] = aTagList[i].href;
+        } else {
+            urlList[i] = `${baseUrl}${aTagList[i].href}`;
+        }
+
+    }
+
+    return urlList;
 }
 
 
