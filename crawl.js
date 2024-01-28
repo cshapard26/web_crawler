@@ -1,7 +1,17 @@
+const url = require('node:url');
+const JSDOM = require('jsdom');
+
+
 function normalizeURL(url) {
-    normalizedUrl = 'a';
-    return normalizedUrl;
+    const normalizedUrl = new URL(url);
+    normalizedUrl.protocol = 'http:';
+    return normalizedUrl.href;
 }
 
-module.exports = normalizeURL;
+function getURLsFromHTML(html){
+    return '';
+}
+
+
+module.exports = {normalizeURL, getURLsFromHTML};
   
