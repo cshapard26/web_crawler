@@ -1,7 +1,7 @@
 # A simple Web Crawler
 
 ```mermaid
-flowchart TD;
+flowchart LR;
   A --> B;
   A --> C;
 
