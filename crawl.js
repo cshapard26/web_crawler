@@ -1,5 +1,5 @@
-const {URL} = require('node:url');
-const {JSDOM} = require("jsdom");
+const { URL } = require('node:url');
+const { JSDOM } = require("jsdom");
 
 
 function normalizeURL(url) {
