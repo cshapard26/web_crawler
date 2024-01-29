@@ -3,7 +3,7 @@
 ```mermaid
 flowchart TD
   A --> B
-  A ---> C
-  B <|-- D
+  A --> C
+  B <-- D
 
 ```
