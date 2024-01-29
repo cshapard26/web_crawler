@@ -1,7 +1,9 @@
 # A simple Web Crawler
+
 ```mermaid
-A --> B
-A ---> C
-B <|-- D
+flowchart TD
+  A --> B
+  A ---> C
+  B <|-- D
 
 ```
