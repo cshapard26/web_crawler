@@ -26,6 +26,9 @@ function getURLsFromHTML(html, baseUrl){
     return urlList;
 }
 
+function crawlPage(currURL) {
+    
+}
 
-module.exports = {normalizeURL, getURLsFromHTML};
+module.exports = {normalizeURL, getURLsFromHTML, crawlPage};
   
