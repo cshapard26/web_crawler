@@ -8,6 +8,7 @@ function main() {
         console.log(`Beginning web crawl starting at ${argv[2]}`)
     }
 
+    crawlPage(argv[2]);
 }
 
 main();
