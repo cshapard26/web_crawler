@@ -1,5 +1,5 @@
 const { argv } = require('node:process');
-const { crawlPage } = require('./crawl.js');
+const { crawlPage, normalizeURL } = require('./crawl.js');
 
 function main() {
     if (argv.length < 3 || argv.length > 3){
@@ -9,7 +9,7 @@ function main() {
     }
 
     const pageCount = {};
-    crawlPage(argv[2], argv[2], pageCount);
+    crawlPage(normalizeURL(argv[2]), normalizeURL(argv[2]), pageCount);
 }
 
 main();

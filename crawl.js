@@ -41,6 +41,9 @@ async function crawlPage(baseURL, currURL, pages) {
         htmlText = await response.text();
         urlList = getURLsFromHTML(htmlText, baseURL)
         for (url1 of urlList) {
+            if (url1.href !== baseURL) {
+                continue;
+            }
             if (!pages[url1]) {
                 pages[url1] = 0;
             } 
