@@ -8,7 +8,8 @@ function main() {
         console.log(`Beginning web crawl starting at ${argv[2]}`)
     }
 
-    crawlPage(argv[2]);
+    const pageCount = {};
+    crawlPage(argv[2], argv[2], pageCount);
 }
 
 main();
