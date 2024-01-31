@@ -26,7 +26,7 @@ function getURLsFromHTML(html, baseUrl){
     return urlList;
 }
 
-async function crawlPage(currURL) {
+async function crawlPage(baseURL, currURL, pages) {
     console.log(`Crawling: ${currURL}`)
     try {
         const response = await fetch(currURL);
@@ -39,7 +39,13 @@ async function crawlPage(currURL) {
             return -1;
         }
         htmlText = await response.text();
-        console.log(htmlText);
+        urlList = getURLsFromHTML(htmlText, baseURL)
+        for (url1 of urlList) {
+            if (!pages[url1]) {
+                pages[url1] = 0;
+            } 
+            pages[url1]++;
+        }
     } catch (err) {
         console.log(err.message)
         return -1;
